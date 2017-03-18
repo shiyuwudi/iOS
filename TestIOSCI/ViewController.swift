@@ -13,6 +13,7 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        test scm poll failed build + auto email notification
     }
 
     override func didReceiveMemoryWarning() {
