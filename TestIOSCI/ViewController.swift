@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import AFNetworking
+import SwiftyJSON
 
 class ViewController: UIViewController {
 
@@ -14,6 +16,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
         // test scm poll failed build + auto email notification
+        let urlString = "https://api.douban.com/v2/book/1220562"
+        AFHTTPSessionManager().get(urlString, parameters: nil, progress: nil, success: onSuccess, failure: onFailure)
+    }
+    
+    func onSuccess(task: URLSessionDataTask, responseObject: Any?) {
+        if let r = responseObject {
+            print(JSON(r))
+        }
+    }
+    
+    func onFailure(task: URLSessionDataTask?, error: Error) {
+        print(error)
     }
 
     override func didReceiveMemoryWarning() {
