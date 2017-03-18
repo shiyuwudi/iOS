@@ -34,6 +34,9 @@
                             <constraint firstItem="Qt5-67-lir" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="rml-zt-81r"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="label" destination="Qt5-67-lir" id="wVi-6c-ZvC"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

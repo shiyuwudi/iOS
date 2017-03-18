@@ -12,6 +12,8 @@ import SwiftyJSON
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var label: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
@@ -22,7 +24,11 @@ class ViewController: UIViewController {
     
     func onSuccess(task: URLSessionDataTask, responseObject: Any?) {
         if let r = responseObject {
-            print(JSON(r))
+            let json = JSON(r)
+            let title = json["title"].stringValue
+            DispatchQueue.main.async {
+                self.label.text = title
+            }
         }
     }
     
